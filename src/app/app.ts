@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { FichaSucreComponent } from './ficha-sucre/ficha-sucre';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FichaSucreComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('3Dmentes');
+export class AppComponent {
+  title = '3Dmentes';
 }
+
+// 👇 EXPORTAR TAMBIÉN COMO 'App' para que main.ts lo encuentre
+export { AppComponent as App };

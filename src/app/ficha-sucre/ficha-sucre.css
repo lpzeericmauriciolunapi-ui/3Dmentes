@@ -1,0 +1,302 @@
+/* ficha-sucre.component.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lego-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  background: linear-gradient(135deg, #f5e7d3 0%, #efe0c9 100%);
+  border-radius: 60px 60px 40px 40px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 248, 205, 0.8);
+  overflow: hidden;
+  border-bottom: 15px solid #c49a2b;
+  border-right: 8px solid #b87e2a;
+  transition: transform 0.2s ease;
+}
+
+.lego-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Studs estilo LEGO */
+.lego-studs {
+  display: flex;
+  gap: 1.5rem;
+  background: #d6a23e;
+  padding: 0.8rem 2rem;
+  border-bottom: 5px solid #b57c1c;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stud {
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(circle at 35% 35%, #ffdd77, #daa520);
+  border-radius: 50%;
+  box-shadow: 0 7px 0 #8b5a2b, inset 0 2px 6px rgba(255, 245, 170, 0.9);
+  transition: all 0.2s;
+}
+
+.stud:hover {
+  transform: scale(1.05);
+  background: radial-gradient(circle at 35% 35%, #ffe48f, #e5b42b);
+}
+
+/* Cabecera */
+.hero-section {
+  background: linear-gradient(145deg, #2c2b26, #22211c);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-bottom: 4px solid #f5c542;
+}
+
+.hero-title {
+  font-family: 'Righteous', 'Impact', cursive;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #FFE484, #F0B429, #ffcf6e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.brick-icon {
+  font-size: 2.8rem;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 0 #8b5a2b);
+}
+
+.hero-subtitle {
+  font-family: 'Righteous', cursive;
+  font-size: 1.8rem;
+  color: #ffd966;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0 #5a3a1a;
+}
+
+.badge-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #f0b429;
+  color: #1f2a0e;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 0 #8b5a2b;
+  transition: 0.1s linear;
+}
+
+/* Galería de imágenes */
+.gallery-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2.5rem 2rem;
+  background: #e9dbc9;
+  border-bottom: 2px solid #cfb991;
+}
+
+.image-card {
+  flex: 1;
+  min-width: 280px;
+  background: #fffaf0;
+  border-radius: 35px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), inset 0 1px 4px white;
+  transition: all 0.25s ease;
+  border: 2px solid #f5c542;
+}
+
+.image-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-label {
+  font-family: 'Righteous', cursive;
+  background: #d6a03e;
+  display: inline-block;
+  padding: 0.4rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2d2412;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.image-frame {
+  background: #e2d2b6;
+  border-radius: 28px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 4px solid #f5c542;
+  box-shadow: inset 0 0 0 2px #fff2d0, 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lego-figure {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  transition: filter 0.3s;
+}
+
+.lego-figure:hover {
+  filter: brightness(1.02) contrast(1.05);
+}
+
+.image-caption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #6b4c2c;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Sección narrativa */
+.story-section {
+  padding: 2.5rem 2rem;
+  background: #fdf3e0;
+  background-image: repeating-linear-gradient(45deg, #f7e9d4 0px, #f7e9d4 1px, #fff3e2 1px, #fff3e2 6px);
+}
+
+.story-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fffcf5;
+  padding: 2.2rem;
+  border-radius: 48px;
+  box-shadow: inset 0 0 0 3px #faeecd, 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2c2a1c;
+}
+
+.story-card p {
+  margin-bottom: 1.3rem;
+  text-align: justify;
+}
+
+.highlight {
+  background: linear-gradient(120deg, #ffe69b 0%, #ffe69b 40%, transparent 60%);
+  padding: 0 0.3rem;
+  font-weight: 700;
+  color: #b64a0c;
+  border-radius: 8px;
+}
+
+.quote-box {
+  background: #e8dbbc;
+  border-left: 10px solid #f5b82e;
+  padding: 1.2rem 1.8rem;
+  margin: 1.8rem 0;
+  border-radius: 35px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.quote-text {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #4a2e12;
+  margin-top: 0.5rem;
+  border-top: 1px dashed #c2a15b;
+  padding-top: 0.8rem;
+}
+
+.final-phrase {
+  font-weight: 800;
+  color: #c9611a;
+  background: #fff0c0;
+  padding: 0.1rem 0.4rem;
+  border-radius: 20px;
+}
+
+.lego-signature {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0.8rem;
+  background: #2b2a1e;
+  color: #ffde9c;
+  border-radius: 60px;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.lego-footer {
+  background: #1e2a12;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 6px solid #f5b82e;
+  color: #f0deae;
+}
+
+.footer-text {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.image-info {
+  font-size: 0.75rem;
+  font-family: monospace;
+  background: #2d3a1e;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 50px;
+  margin: 0.5rem 0;
+}
+
+.credits {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  .story-card {
+    padding: 1.2rem;
+  }
+  .lego-studs {
+    gap: 0.8rem;
+  }
+  .stud {
+    width: 30px;
+    height: 30px;
+  }
+}
