@@ -1,302 +1,686 @@
-/* ficha-sucre.component.css */
+/* ficha-sucre/ficha-sucre.css - Estilo Landing Page Rockstar + LEGO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.lego-container {
-  max-width: 1400px;
-  margin: 2rem auto;
-  background: linear-gradient(135deg, #f5e7d3 0%, #efe0c9 100%);
-  border-radius: 60px 60px 40px 40px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 248, 205, 0.8);
-  overflow: hidden;
-  border-bottom: 15px solid #c49a2b;
-  border-right: 8px solid #b87e2a;
-  transition: transform 0.2s ease;
+body {
+  background-color: #050505;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
 }
 
-.lego-container:hover {
-  transform: translateY(-5px);
+/* Contenedor principal */
+.landing-container {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
 }
 
-/* Studs estilo LEGO */
-.lego-studs {
+/* SECCIÓN HERO (estilo épico) */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
   display: flex;
-  gap: 1.5rem;
-  background: #d6a23e;
-  padding: 0.8rem 2rem;
-  border-bottom: 5px solid #b57c1c;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect width="1000" height="1000" fill="%230a0a0a"/><path d="M0 500 L1000 500 M500 0 L500 1000" stroke="%231a1a1a" stroke-width="2"/><circle cx="500" cy="500" r="300" fill="none" stroke="%23222222" stroke-width="4"/></svg>'), linear-gradient(145deg, #0a0a0a 0%, #1a1208 100%);
+  background-size: cover, auto;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.lego-studs-hero {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .stud {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   background: radial-gradient(circle at 35% 35%, #ffdd77, #daa520);
   border-radius: 50%;
-  box-shadow: 0 7px 0 #8b5a2b, inset 0 2px 6px rgba(255, 245, 170, 0.9);
-  transition: all 0.2s;
+  box-shadow: 0 5px 0 #8b5a2b, inset 0 2px 4px rgba(255,245,170,0.8);
+  transition: transform 0.2s;
 }
 
 .stud:hover {
-  transform: scale(1.05);
-  background: radial-gradient(circle at 35% 35%, #ffe48f, #e5b42b);
+  transform: scale(1.1);
 }
 
-/* Cabecera */
-.hero-section {
-  background: linear-gradient(145deg, #2c2b26, #22211c);
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border-bottom: 4px solid #f5c542;
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #f5c542;
+  border: 1px solid rgba(245, 197, 66, 0.5);
+  margin-bottom: 1.5rem;
 }
 
 .hero-title {
-  font-family: 'Righteous', 'Impact', cursive;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
   background: linear-gradient(135deg, #FFE484, #F0B429, #ffcf6e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   margin-bottom: 0.5rem;
 }
 
 .brick-icon {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   display: inline-block;
   filter: drop-shadow(2px 2px 0 #8b5a2b);
 }
 
 .hero-subtitle {
-  font-family: 'Righteous', cursive;
-  font-size: 1.8rem;
-  color: #ffd966;
-  letter-spacing: 2px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 4px;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 0 #5a3a1a;
+  text-shadow: 0 0 15px rgba(245,197,66,0.5);
 }
 
-.badge-container {
+.hero-date {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #dddddd;
   flex-wrap: wrap;
 }
 
-.badge {
-  background: #f0b429;
-  color: #1f2a0e;
-  padding: 0.5rem 1.2rem;
-  border-radius: 40px;
-  font-weight: bold;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 0 #8b5a2b;
-  transition: 0.1s linear;
+.hero-cta {
+  margin-top: 2rem;
 }
 
-/* Galería de imágenes */
-.gallery-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  padding: 2.5rem 2rem;
-  background: #e9dbc9;
-  border-bottom: 2px solid #cfb991;
-}
-
-.image-card {
-  flex: 1;
-  min-width: 280px;
-  background: #fffaf0;
-  border-radius: 35px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), inset 0 1px 4px white;
-  transition: all 0.25s ease;
+.cta-button {
+  background: transparent;
   border: 2px solid #f5c542;
-}
-
-.image-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-}
-
-.image-label {
-  font-family: 'Righteous', cursive;
-  background: #d6a03e;
-  display: inline-block;
-  padding: 0.4rem 1.5rem;
-  border-radius: 30px;
+  color: #f5c542;
   font-size: 1.1rem;
-  font-weight: bold;
-  color: #2d2412;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+  font-family: inherit;
+}
+
+.cta-button:hover {
+  background: #f5c542;
+  color: #0a0a0a;
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(245,197,66,0.4);
+}
+
+.cta-note {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  opacity: 0.7;
   letter-spacing: 1px;
 }
 
-.image-frame {
-  background: #e2d2b6;
-  border-radius: 28px;
-  padding: 1rem;
-  margin: 1rem 0;
-  border: 4px solid #f5c542;
-  box-shadow: inset 0 0 0 2px #fff2d0, 0 8px 15px rgba(0, 0, 0, 0.1);
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
 }
 
-.lego-figure {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
+.hero-scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  margin: 8px auto 0;
+  animation: bounce 1.5s infinite;
+}
+
+/* SECCIÓN PERSONAJES (estilo ficha LEGO) */
+.characters-section {
+  padding: 5rem 2rem;
+  background: #0d0d0d;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background: #1a1a1a;
+  padding: 0.3rem 1rem;
   border-radius: 20px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #f5c542;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #aaaaaa;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.characters-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.character-card {
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.2s;
+}
+
+.character-card:hover {
+  transform: translateY(-10px);
+  border-color: #f5c542;
+}
+
+.character-image-frame {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #2a2a2a;
+}
+
+.character-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 12px;
   display: block;
   margin: 0 auto;
-  transition: filter 0.3s;
 }
 
-.lego-figure:hover {
-  filter: brightness(1.02) contrast(1.05);
+.character-card h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
+  color: #f5c542;
 }
 
-.image-caption {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #6b4c2c;
-  font-weight: 500;
+.character-card p {
+  font-size: 0.85rem;
+  color: #bbbbbb;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.character-quote {
   font-style: italic;
+  font-size: 0.8rem;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 1rem;
+  color: #dddddd;
 }
 
-/* Sección narrativa */
+/* SECCIÓN HISTORIA (estilo inmersivo) */
 .story-section {
-  padding: 2.5rem 2rem;
-  background: #fdf3e0;
-  background-image: repeating-linear-gradient(45deg, #f7e9d4 0px, #f7e9d4 1px, #fff3e2 1px, #fff3e2 6px);
+  position: relative;
+  padding: 5rem 2rem;
+  background: #080808;
+  overflow: hidden;
 }
 
-.story-card {
-  max-width: 1100px;
+.story-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(245,197,66,0.05), transparent 70%);
+  z-index: 0;
+}
+
+.story-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
   margin: 0 auto;
-  background: #fffcf5;
-  padding: 2.2rem;
-  border-radius: 48px;
-  box-shadow: inset 0 0 0 3px #faeecd, 0 12px 24px rgba(0, 0, 0, 0.1);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #2c2a1c;
 }
 
-.story-card p {
-  margin-bottom: 1.3rem;
+.story-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.story-tag {
+  display: inline-block;
+  background: rgba(245,197,66,0.15);
+  padding: 0.2rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  color: #f5c542;
+  margin-bottom: 1rem;
+}
+
+.story-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.story-text-grid {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.story-paragraphs {
+  flex: 2;
+  min-width: 280px;
+}
+
+.story-paragraphs p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: #dddddd;
+  font-size: 1rem;
   text-align: justify;
 }
 
 .highlight {
-  background: linear-gradient(120deg, #ffe69b 0%, #ffe69b 40%, transparent 60%);
-  padding: 0 0.3rem;
-  font-weight: 700;
-  color: #b64a0c;
-  border-radius: 8px;
+  background: linear-gradient(120deg, rgba(245,197,66,0.2) 0%, rgba(245,197,66,0.2) 40%, transparent 60%);
+  padding: 0 0.2rem;
+  font-weight: 600;
+  color: #f5c542;
 }
 
-.quote-box {
-  background: #e8dbbc;
-  border-left: 10px solid #f5b82e;
-  padding: 1.2rem 1.8rem;
+.story-quote {
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid #f5c542;
+  padding: 1rem 1.5rem;
   margin: 1.8rem 0;
-  border-radius: 35px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-}
-
-.quote-icon {
-  font-size: 2rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  vertical-align: middle;
+  border-radius: 12px;
 }
 
 .quote-text {
   font-style: italic;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #4a2e12;
-  margin-top: 0.5rem;
-  border-top: 1px dashed #c2a15b;
-  padding-top: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+  color: #ffeaac;
 }
 
 .final-phrase {
-  font-weight: 800;
-  color: #c9611a;
-  background: #fff0c0;
-  padding: 0.1rem 0.4rem;
-  border-radius: 20px;
+  font-weight: 700;
+  color: #f5c542;
 }
 
-.lego-signature {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 0.8rem;
-  background: #2b2a1e;
-  color: #ffde9c;
-  border-radius: 60px;
-  font-family: monospace;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* Footer */
-.lego-footer {
-  background: #1e2a12;
+.story-stats {
+  flex: 1;
+  min-width: 200px;
+  background: #0f0f0f;
+  border-radius: 24px;
   padding: 1.5rem;
-  text-align: center;
-  border-top: 6px solid #f5b82e;
-  color: #f0deae;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid #2a2a2a;
+  height: fit-content;
 }
 
-.footer-text {
-  font-size: 1rem;
-  font-weight: bold;
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f5c542;
+  line-height: 1;
   margin-bottom: 0.5rem;
 }
 
-.image-info {
-  font-size: 0.75rem;
-  font-family: monospace;
-  background: #2d3a1e;
-  display: inline-block;
-  padding: 0.2rem 1rem;
-  border-radius: 50px;
-  margin: 0.5rem 0;
+.stat-label {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.credits {
+/* FOOTER */
+.lego-footer {
+  background: #030303;
+  padding: 2rem;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #f5c542;
+}
+
+.footer-info, .footer-copyright, .footer-legal {
   font-size: 0.7rem;
-  opacity: 0.9;
+  color: #777777;
+  margin: 0.3rem 0;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(8px); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   .hero-subtitle {
     font-size: 1.3rem;
   }
-  .story-card {
-    padding: 1.2rem;
+  .section-header h2 {
+    font-size: 2rem;
   }
-  .lego-studs {
-    gap: 0.8rem;
+  .story-header h2 {
+    font-size: 2rem;
   }
-  .stud {
-    width: 30px;
-    height: 30px;
+  .character-card {
+    width: 280px;
   }
+  .hero-scroll-indicator span {
+    display: none;
+  }
+}
+/* ============================================
+   EFECTOS DINÁMICOS DE FONDO (SUTILES)
+   ============================================ */
+
+/* 1. Fondo con granulado sutil en movimiento */
+.landing-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.landing-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(circle at 20% 40%, rgba(245, 197, 66, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(218, 165, 32, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  animation: floatParticles 20s linear infinite;
+}
+
+/* 2. Partículas LEGO flotantes (studs fantasmas) */
+@keyframes floatParticles {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, -80px 80px;
+  }
+}
+
+/* 3. Brillo ambiental que se mueve (efecto "resplandor épico") */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, 
+    rgba(245, 197, 66, 0.08) 0%, 
+    rgba(245, 197, 66, 0.02) 30%,
+    transparent 70%);
+  animation: rotateGlow 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg) translate(0%, 0%);
+  }
+  100% {
+    transform: rotate(360deg) translate(0%, 0%);
+  }
+}
+
+/* 4. Efecto de "polvo de ladrillo" en movimiento para toda la página */
+.story-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(218, 165, 32, 0.02) 0px,
+    rgba(218, 165, 32, 0.02) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  pointer-events: none;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* 5. Efecto hover en tarjetas con "brillo dinámico" */
+.character-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.character-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(245, 197, 66, 0.05) 45%,
+    rgba(245, 197, 66, 0.08) 50%,
+    rgba(245, 197, 66, 0.05) 55%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.character-card:hover::before {
+  animation: cardShine 0.8s ease forwards;
+}
+
+@keyframes cardShine {
+  0% {
+    transform: rotate(25deg) translate(-30%, -30%);
+  }
+  100% {
+    transform: rotate(25deg) translate(30%, 30%);
+  }
+}
+
+/* 6. Brillo sutil en el título que respira */
+.hero-title {
+  animation: gentleBreathing 3s ease-in-out infinite;
+}
+
+@keyframes gentleBreathing {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(245, 197, 66, 0.6);
+  }
+}
+
+/* 7. Efecto de "lluvia de studs" muy sutil en el hero */
+.hero-section {
+  overflow: hidden;
+}
+
+.hero-section .lego-studs-hero {
+  position: relative;
+  z-index: 2;
+}
+
+/* 8. Línea de tiempo animada en las estadísticas */
+.stat-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  animation: numberPop 0.3s ease-out;
+}
+
+@keyframes numberPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    color: #ffdd77;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 9. Fondo de la galería con movimiento ultra sutil */
+.gallery-section {
+  background-attachment: fixed;
+}
+
+/* 10. Efecto de "polvo dorado" que cae lentamente */
+@keyframes dustFall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Añadimos partículas doradas muy sutiles */
+.landing-container {
+  position: relative;
+}
+
+.dust-particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: rgba(245, 197, 66, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: dustFall linear infinite;
 }
