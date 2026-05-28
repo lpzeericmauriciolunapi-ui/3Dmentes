@@ -1,111 +1,138 @@
 <!-- ficha-sucre/ficha-sucre.html -->
-<!-- Este archivo contiene la estructura, estilos y lógica para la Landing Page estilo Rockstar -->
-<div class="landing-container">
-  <div class="landing-container">
-  <!-- Contenedor de partículas dinámicas -->
-  <div id="particles-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></div>
-  <section class="hero-section">
-    <div class="hero-background-overlay"></div>
+<div class="lego-landing">
+  <!-- Studs decorativos superiores estilo LEGO -->
+  <div class="lego-studs-bar">
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+    <div class="stud"></div>
+  </div>
+
+  <!-- SECCIÓN HERO - Estilo LEGO -->
+  <section class="hero-lego">
     <div class="hero-content">
-      <!-- Studs LEGO sutiles pero presentes -->
-      <div class="lego-studs-hero">
-        <div class="stud"></div><div class="stud"></div><div class="stud"></div>
-        <div class="stud"></div><div class="stud"></div><div class="stud"></div>
+      <div class="hero-badge-lego">
+        <span>🧱 COLECCIÓN LEGENDARIA 🧱</span>
       </div>
-      <div class="hero-badge">PRÓXIMO LANZAMIENTO</div>
-      <h1 class="hero-title">
+      <h1 class="hero-title-lego">
         <span class="brick-icon">🧱</span> MARISCAL DE LEGO <span class="brick-icon">⚡</span>
       </h1>
-      <h2 class="hero-subtitle">ANTONIO JOSÉ DE SUCRE</h2>
-      <div class="hero-date">
-        <span>★ GRAN MARISCAL DE AYACUCHO ★</span>
-        <span>🏆 29 VELAS · INVICTO 🏆</span>
+      <h2 class="hero-subtitle-lego">ANTONIO JOSÉ DE SUCRE</h2>
+      <div class="hero-info-lego">
+        <div class="info-chip">★ GRAN MARISCAL DE AYACUCHO ★</div>
+        <div class="info-chip">🏆 29 VELAS · INVICTO 🏆</div>
+        <div class="info-chip">🧱 EDICIÓN LIMITADA 🧱</div>
       </div>
-      <div class="hero-cta">
-        <button class="cta-button" (click)="scrollToStory()">▸ DESCUBRE LA LEYENDA</button>
-        <div class="cta-note">Mira el tráiler de la gesta más épica</div>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator" (click)="scrollToStory()">
-      <span>Desplaza para conocer la historia</span>
-      <div class="scroll-arrow"></div>
+      <button class="lego-button" (click)="scrollToStory()">
+        <span>🔽</span> CONOCE LA HISTORIA <span>🔽</span>
+      </button>
     </div>
   </section>
 
-  <!-- Sección 2: Galería de figuras LEGO (similar a personajes de GTA VI) -->
-  <section class="characters-section">
-    <div class="section-header">
-      <span class="section-tag">★ EL LEGADO EN LADRILLOS ★</span>
-      <h2>Conoce al Mariscal</h2>
-      <p>Dos visiones de un mismo héroe que cambió el destino de América</p>
+  <!-- SECCIÓN GALERÍA LEGO -->
+  <section class="gallery-lego">
+    <div class="section-title-lego">
+      <div class="title-decoration">⚙️═══════⚙️</div>
+      <h2>FIGURAS LEGO® DEL MARISCAL</h2>
+      <div class="title-decoration">⚙️═══════⚙️</div>
     </div>
-    <div class="characters-grid">
-      <div class="character-card">
-        <div class="character-image-frame">
-          <img [src]="frontImagePath" alt="Vista frontal LEGO" class="character-img" (error)="handleImageError($event, 'front')">
+    <div class="lego-figures">
+      <div class="lego-card">
+        <div class="card-header">⚔️ VISTA FRONTAL ⚔️</div>
+        <div class="lego-frame">
+          <img [src]="frontImagePath" alt="Sucre LEGO frontal" class="lego-figure-img" (error)="handleImageError($event, 'front')">
         </div>
-        <h3>⚔️ VISTA FRONTAL</h3>
-        <p>El rostro del cóndor<br>La mirada que detuvo imperios</p>
-        <div class="character-quote">"La gloria corona la constancia"</div>
+        <p class="card-caption">El rostro del cóndor · La mirada que detuvo imperios</p>
+        <div class="lego-brick-decoration"></div>
       </div>
-      <div class="character-card">
-        <div class="character-image-frame">
-          <img [src]="backImagePath" alt="Vista trasera LEGO" class="character-img" (error)="handleImageError($event, 'back')">
+      <div class="lego-card">
+        <div class="card-header">🛡️ VISTA TRASERA 🛡️</div>
+        <div class="lego-frame">
+          <img [src]="backImagePath" alt="Sucre LEGO trasera" class="lego-figure-img" (error)="handleImageError($event, 'back')">
         </div>
-        <h3>🛡️ VISTA TRASERA</h3>
-        <p>El eco de su capa<br>Ladrillos que sellaron la libertad</p>
-        <div class="character-quote">"Hasta aquí nomás, imperio"</div>
+        <p class="card-caption">El eco de su capa · Ladrillos que sellaron la libertad</p>
+        <div class="lego-brick-decoration"></div>
       </div>
     </div>
   </section>
 
-  <!-- Sección 3: La Historia (estilo narrativo inmersivo) -->
-  <section class="story-section">
-    <div class="story-background"></div>
-    <div class="story-content">
-      <div class="story-header">
-        <span class="story-tag">★ LA GESTA DE AYACUCHO ★</span>
-        <h2>Una batalla,<br>un continente libre</h2>
+  <!-- SECCIÓN HISTORIA ÉPICA -->
+  <section class="story-lego">
+    <div class="story-container">
+      <div class="story-header-lego">
+        <span class="story-badge">📜 LA GESTA DE AYACUCHO 📜</span>
+        <h2>UNA BATALLA,<br>UN CONTINENTE LIBRE</h2>
+        <div class="lego-divider">
+          <span>🧱</span> <span>🧱</span> <span>🧱</span>
+        </div>
       </div>
-      <div class="story-text-grid">
-        <div class="story-paragraphs">
-          <p>En las altas llanuras de <span class="highlight">Ayacucho</span>, donde el viento corta como hoja de obsidiana y las nubes caminan pegadas a la tierra, se selló el destino de todo un continente. Allí, a más de tres mil brazas de altura sobre el mar de los hombres comunes, el joven general <strong>Antonio José de Sucre</strong> asumió el mando del Ejército Unido Libertador. Apenas había encendido <span class="highlight">veintinueve velas</span> en el altar de su vida, pero su mirada era tan antigua como los cóndores que sobrevolaron la independencia.</p>
-          <p>El desafío era colosal, casi un maleficio lanzado por reyes antiguos. Frente a él, el poderoso ejército del Virrey La Serna se desplegaba como una serpiente de acero: lo superaban en número, en artillería y en posición táctica, pues dominaban la única colina desde donde se podía ver el amanecer y el ocaso al mismo tiempo.</p>
-          <div class="story-quote">
-            <span class="quote-icon">🗣️</span>
+      
+      <div class="story-text-lego">
+        <p>En las altas llanuras de <span class="highlight-lego">Ayacucho</span>, donde el viento corta como hoja de obsidiana y las nubes caminan pegadas a la tierra, se selló el destino de todo un continente. Allí, a más de tres mil brazas de altura sobre el mar de los hombres comunes, el joven general <strong>Antonio José de Sucre</strong> asumió el mando del Ejército Unido Libertador. Apenas había encendido <span class="highlight-lego">veintinueve velas</span> en el altar de su vida, pero su mirada era tan antigua como los cóndores que sobrevolaron la independencia.</p>
+
+        <p>El desafío era colosal, casi un maleficio lanzado por reyes antiguos. Frente a él, el poderoso ejército del Virrey La Serna se desplegaba como una serpiente de acero: lo superaban en número, en artillería y en posición táctica, pues dominaban la única colina desde donde se podía ver el amanecer y el ocaso al mismo tiempo.</p>
+
+        <div class="quote-lego">
+          <div class="quote-icon-lego">🗣️</div>
+          <div class="quote-content">
             <p>“Minutos antes de romper filas, cabalgando con valentía frente a sus hombres, <strong>Sucre alzó la voz</strong>. No era un grito de guerra, sino una profecía. El viento llevó sus palabras a cada oído, incluso a los del enemigo:”</p>
-            <p class="quote-text">¡Soldados! De los esfuerzos de hoy depende la suerte de América. Otro día de gloria va a coronar vuestra admirable constancia.</p>
+            <p class="quote-text-lego">¡Soldados! De los esfuerzos de hoy depende la suerte de América. Otro día de gloria va a coronar vuestra admirable constancia.</p>
           </div>
-          <p>Dicho esto, una luz tenue pero firme brotó del pecho de cada soldado. Era la memoria de todos los que cayeron antes, encendida por la promesa de un <strong>joven mariscal que nunca había conocido la derrota</strong>.</p>
-          <p>En una genialidad táctica de pocas horas, apenas lo que tarda un relámpago en cruzar tres montañas, el joven general contuvo las cargas coloniales como quien detiene un alud con una sola palabra. Y cuando el Virrey creyó tenerlo acorralado, Sucre lanzó un contraataque fulminante. Sus jinetes bajaron por las faldas de la pampa como un <strong>río de fuego</strong>, y el ejército realista fue desarticulado por completo. Las espadas cantaron su última canción. Los cañones enmudecieron. El Virrey cayó prisionero, y esa misma tarde, con la tinta apenas seca, firmó la rendición definitiva de España en tierra americana.</p>
-          <p>Por esta hazaña invicta, la historia lo consagró para siempre como el <span class="highlight">Gran Mariscal de Ayacucho</span>: el hombre que diseñó con su espada la libertad de un continente.</p>
-          <p>Y cuentan los viejos de la sierra que, en las noches de tempestad, aún se escucha el eco de su caballo galopando entre los ladrillos del tiempo. No es un fantasma, dicen. Es un recordatorio de que hubo una vez un hombre de <strong>veintinueve años</strong> que miró a un imperio y le dijo: <em class="final-phrase">“hasta aquí nomás”</em>. Y el imperio, por una vez, lo escuchó.</p>
         </div>
-        <div class="story-stats">
-          <div class="stat-item">
-            <div class="stat-number">1</div>
-            <div class="stat-label">Ejército Unido<br>Libertador</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">29</div>
-            <div class="stat-label">Velas encendidas<br>en su altar</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Derrotas<br>en su carrera</div>
-          </div>
+
+        <p>Dicho esto, una luz tenue pero firme brotó del pecho de cada soldado. Era la memoria de todos los que cayeron antes, encendida por la promesa de un <strong>joven mariscal que nunca había conocido la derrota</strong>.</p>
+
+        <p>En una genialidad táctica de pocas horas, apenas lo que tarda un relámpago en cruzar tres montañas, el joven general contuvo las cargas coloniales como quien detiene un alud con una sola palabra. Y cuando el Virrey creyó tenerlo acorralado, Sucre lanzó un contraataque fulminante. Sus jinetes bajaron por las faldas de la pampa como un <strong>río de fuego</strong>, y el ejército realista fue desarticulado por completo. Las espadas cantaron su última canción. Los cañones enmudecieron. El Virrey cayó prisionero, y esa misma tarde, con la tinta apenas seca, firmó la rendición definitiva de España en tierra americana.</p>
+
+        <p>Por esta hazaña invicta, la historia lo consagró para siempre como el <span class="highlight-lego">Gran Mariscal de Ayacucho</span>: el hombre que diseñó con su espada la libertad de un continente.</p>
+
+        <p>Y cuentan los viejos de la sierra que, en las noches de tempestad, aún se escucha el eco de su caballo galopando entre los ladrillos del tiempo. No es un fantasma, dicen. Es un recordatorio de que hubo una vez un hombre de <strong>veintinueve años</strong> que miró a un imperio y le dijo: <em class="final-phrase-lego">“hasta aquí nomás”</em>. Y el imperio, por una vez, lo escuchó.</p>
+      </div>
+
+      <!-- Estadísticas LEGO -->
+      <div class="stats-lego">
+        <div class="stat-block">
+          <div class="stat-number-lego">1</div>
+          <div class="stat-label-lego">EJÉRCITO UNIDO</div>
+          <div class="stat-brick"></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number-lego">29</div>
+          <div class="stat-label-lego">VELAS ENCENDIDAS</div>
+          <div class="stat-brick"></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number-lego">0</div>
+          <div class="stat-label-lego">DERROTAS</div>
+          <div class="stat-brick"></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number-lego">1824</div>
+          <div class="stat-label-lego">AYACUCHO</div>
+          <div class="stat-brick"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sección 4: Footer estilo Rockstar -->
-  <footer class="lego-footer">
+  <!-- FOOTER LEGO -->
+  <footer class="footer-lego">
+    <div class="footer-studs">
+      <div class="small-stud"></div>
+      <div class="small-stud"></div>
+      <div class="small-stud"></div>
+      <div class="small-stud"></div>
+    </div>
     <div class="footer-content">
-      <div class="footer-logo">🧱 MARISCAL DE LEGO ⚡</div>
-      <div class="footer-info">📸 Imágenes: M1.jpeg (frontal) · M2.jpeg (trasera) ubicadas en /assets/</div>
-      <div class="footer-copyright">★ Diseño fantasioso · Basado en la gesta de Ayacucho · Todos los ladrillos honran la memoria del Libertador ★</div>
-      <div class="footer-legal">© 2026 - LEGO® y el Mariscal de Ayacucho. Una experiencia de ladrillos y libertad.</div>
+      <div class="footer-logo-lego">🧱 MARISCAL DE LEGO · EDICIÓN AYACUCHO 🧱</div>
+      
+      <div class="footer-credit">★ Diseño fantasioso LEGO® · Basado en la gesta de Ayacucho · Todos los ladrillos honran la memoria del Libertador ★</div>
     </div>
   </footer>
 </div>
